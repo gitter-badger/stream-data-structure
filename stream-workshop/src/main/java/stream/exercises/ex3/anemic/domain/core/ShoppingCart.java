@@ -24,22 +24,16 @@ public class ShoppingCart {
     }
 
     private Function<List<Product>, Double> getOrderCosts() {
-        return list -> list.stream().map(productCostWithDiscount()).reduce(0d, sum());
+        throw new UnsupportedOperationException("Missing implementation");
     }
 
-    private Function<Product, Double> productCostWithDiscount() {
-        return p -> p.getAmount() * p.getPrice() * discount(p);
-    }
-
+    // if client has loyalty card it should get 5% discount of total costs
     private Function<Double, Double> applyDiscount() {
-        return cost -> hasLoyaltyCard ? cost * 0.95 : cost;
+        throw new UnsupportedOperationException("Missing implementation");
     }
 
+    //helper function which can be used also for count total cost
     private BinaryOperator<Double> sum() {
-        return (a, b) -> a + b;
-    }
-
-    private double discount(Product p) {
-        return (100 - p.getDiscount()) / 100;
+        throw new UnsupportedOperationException("Missing implementation");
     }
 }

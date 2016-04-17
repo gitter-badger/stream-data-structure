@@ -13,7 +13,7 @@ import Debug.Trace
 --When called, trace outputs the string in its first argument, before returning the second argument as its result.'
 --You must keep in mind that due to lazy evaluation your traces will only print if the value they wrap is ever demanded.
 main :: IO()
-main = print $ (False) &&& (trace ("superConsuming Operation is called") (superConsumingOperation 1))
+main = print $ (True) &&& (trace ("superConsuming Operation is called") (superConsumingOperation 1))
 
 (&&&) :: Bool -> Bool -> Bool
 True  &&& x = x
@@ -23,7 +23,10 @@ superConsumingOperation :: Integer -> Bool
 superConsumingOperation 0  = False
 superConsumingOperation n = True
 
-
+-- ctrl x + o - switch window
+-- ctrl c + b - run interpreter
+-- ctrl x + s - safe buffer
+-- ctrl x + c - save buffers - kill emacs
 -- OR dynamic breakpoints using GHCI to observer intermediate values
 -- :break Exercise1 25
 -- main

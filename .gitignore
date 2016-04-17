@@ -1,3 +1,8 @@
-*.class
 *.hi
 *.o
+*.log
+*.iml
+.*
+!.gitignore
+target/
+
